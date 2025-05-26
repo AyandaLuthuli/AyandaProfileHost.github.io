@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+
+    <style>
+      .icon-wrapper {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 25px;
+        display: inline-block;
+      }
+
+      .top-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+
+      .bottom-icon img,
+      .top-icon img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .icon-wrapper:hover .top-icon {
+        display: block;
+        /* filter: brightness(1.2);
+        box-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055; */
+        transform: scale(1.1);
+      }
+
+      .icon-wrapper.instagram:hover img {
+        box-shadow: 0 0 30px rgba(255, 0, 150, 0.7);
+      }
+
+      .icon-wrapper.github:hover img {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      }
+
+      .icon-wrapper.linkedin:hover img {
+        box-shadow: 0 0 50px rgba(0, 119, 181, 0.8);
+      }
+
+      /*Ayanda Lutuli*/
+      .typing-animation {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 2px solid #4ec7f3; /* Cursor */
+        white-space: nowrap;
+        letter-spacing: 1px; /* Adjust if needed */
+        animation: typing 3s steps(14, end) forwards,
+          /* 14 = number of chars in "Ayanda Luthuli" */ blink-caret 0.75s
+            step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        } /* Full width */
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #4ec7f3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Ayanda Luthuli</div>
+        <ul>
+          <li><a href="profile.html">Home</a></li>
+          <li><a href="Features.html">Features</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="Resume.html">Resume</a></li>
+          <li><a href="history.html">Blog</a></li>
+        </ul>
+        <a href="#" class="btn">CONTACT</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="content">
+        <p>WELCOME TO MY WORLD</p>
+        <h1>
+          Hi, I'm <span class="highlight typing-animation"></span><br />
+          a <span class="bold">Developer.</span>
+        </h1>
+
+        <p class="description">
+          I started by learning <span class="highlight">HTML</span> and
+          <span class="highlight">CSS</span> to build my personal portfolio
+          website—a space to showcase my skills as a
+          <span class="highlight">Software Developer</span>. Through hands-on
+          projects and version control with
+          <span class="highlight">Git</span> and
+          <span class="highlight">GitHub</span>, I've gained practical
+          experience in structuring web pages, crafting responsive designs, and
+          creating visually appealing interfaces. This journey has deepened my
+          understanding of core
+          <span class="highlight">Web Development</span> principles, UI/UX best
+          practices, and the importance of clean, maintainable code. Now, I'm
+          excited to expand my knowledge further by diving into
+          <span class="highlight">JavaScript</span> and modern frameworks,
+          turning static designs into dynamic, interactive experiences. Every
+          line of code I commit is a step toward mastering the art of
+          development!
+        </p>
+      </div>
+      <div class="image">
+        <img src="ayanda.png" alt="Profile Image" />
+        <br />
+        <div class="icon-wrapper instagram">
+          <div class="top-icon">
+            <a href="https://www.instagram.com/y.b.atee/" target="_blank">
+              <img src="instaOriginal.png" alt="Instagram Colored"
+            /></a>
+          </div>
+          <div class="bottom-icon">
+            <img src="insta.jpg" alt="Instagram Outline" />
+          </div>
+        </div>
+
+        <div class="icon-wrapper github">
+          <div class="top-icon">
+            <a href="https://github.com/AyandaLuthuli" target="_blank">
+              <img src="githubOriginal.png" alt="GitHub Colored"
+            /></a>
+          </div>
+          <div class="bottom-icon">
+            <img src="gighubb.png" alt="GitHub Outline" />
+          </div>
+        </div>
+        <div class="icon-wrapper linkedin">
+          <div class="top-icon">
+            <a
+              href="https://www.linkedin.com/in/ayanda-luthuli-b555b9348"
+              target="_blank"
+            >
+              <img src="linkOriginal.png" alt="GitHub Colored"
+            /></a>
+          </div>
+          <div class="bottom-icon">
+            <img src="link.png" alt="GitHub Outline" />
+          </div>
+        </div>
+        <div class="icon-wrapper linkedin">
+          <div class="top-icon email-image-link">
+            <a href="mailto:ayandaalton2003@gmail.com" target="_blank">
+              <img src="gmailOriginal.jpg" alt="email me " />
+            </a>
+          </div>
+          <div class="bottom-icon">
+            <img src="gmail.png" alt="GitHub Outline" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const name = "Ayanda Luthuli";
+      const typingElement = document.querySelector(".typing-animation");
+
+      typingElement.textContent = name;
+
+      const style = document.createElement("style");
+      style.textContent = `
+    @keyframes typing {
+      from { width: 0 }
+      to { width: ${name.length}ch } /* 1ch ≈ width of "0" */
+    }
+  `;
+      document.head.appendChild(style);
+    });
+  </script>
+</html>
